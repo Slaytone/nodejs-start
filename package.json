@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-start",
+  "version": "1.0.0",
+  "description": "my first node.js project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slaytone/nodejs-start.git"
+  },
+  "author": "Slaytone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Slaytone/nodejs-start/issues"
+  },
+  "homepage": "https://github.com/Slaytone/nodejs-start#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
