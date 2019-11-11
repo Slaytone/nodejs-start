@@ -1,27 +1,12 @@
-//use global vars
+let url = require('url');
 
-//console.log('Directory name:', __dirname);
-//console.log('File name:', __filename);
+let myUrl = 'http://user:pass@host.com:8080/p/a/t?query=string&r=1#hash';
 
-let path = require('path');
+let myUrlObj = url.parse(myUrl,1==1);
 
-console.log(path.basename(__filename));
+console.log(myUrlObj);
 
-console.log(path.resolve('./test'));
+let formattedUrl = url.format(myUrlObj);
 
-console.log(path.extname(__filename));
-
-console.log(path.isAbsolute('./test'));
-console.log(path.isAbsolute(__filename));
-
-let file = '09_file.js';
-console.log("Generation path : ",path.join(__dirname, file));
-
-let filePath = path.join(__dirname, file);
-
-//parsing path to object
-console.log(path.parse(filePath));
-
-console.log(path.sep);
-
+console.log(formattedUrl);
 

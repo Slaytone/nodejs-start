@@ -1,4 +1,4 @@
-//array of event listener
+
 
 let evt = require('events').EventEmitter;
 let emt = new evt();

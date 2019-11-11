@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            let btn = document.getElementById("button");
+            let container = document.getElementById("output");
+            function makeRequest() {
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', 'request');
+                xhr.onload = () =>{
+                    container.innerHTML += xhr.responseText;
+                };
+                xhr.send()
+            }
+            btn.addEventListener('click', makeRequest);
+        }
+    </script>
+</head>
+<body>
+    <h1 style="color: blueviolet; text-align: center; font-size: xx-large"> Site's main page </h1>
+    <button id="button">GET DATA</button>
+    <div id='output'></div>
+</body>
+</html>

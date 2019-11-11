@@ -1,33 +1,27 @@
 let evt = require('events').EventEmitter;
 let emt = new evt();
 
-let count = 0;
 
-emt.on('newListener', function(event, listener){
-    if (event == 'click'){
-        console.log("Click was added to emt.");
-    }
-});
-
-emt.on('removeListener', function(event, listener){
-    if (event == 'click'){
-        console.log("Click was removed to emt.");
-    }
-});
-
-emt.on('click', function(){
-    console.log("Listener .....");
+emt.on('click', function(a, b){
+    console.log('a = ' +  a + '; b = ' + b);
 });
 
 
 emt.on('click', function(){
-    console.log("Listener .....");
+    console.log(arguments);
 });
 
 
+emt.emit('click', 23, 22);
 
+emt.emit('click', {a:23, d:22}, 3);
+
+//console.log(emt.listenerCount('click'));
+emt.setMaxListeners( 105);
+for (let i = 0; i < 100; i++){
+    emt.on('click', function(){
+        console.log('Listener # ' + i);
+    });
+}
 console.log(emt.listenerCount('click'));
-
-emt.removeAllListeners('click');
-
-console.log(emt.listenerCount('click'));
+emt.emit('click', 23, 22);
