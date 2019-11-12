@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Slaytone/nodejs-start#readme",
   "dependencies": {
     "colors": "^1.4.0",
+    "express": "^4.17.1",
     "nodemailer": "^6.3.1",
     "request": "^2.88.0"
   }
